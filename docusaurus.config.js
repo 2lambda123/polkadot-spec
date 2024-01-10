@@ -27,7 +27,7 @@ async function createConfig() {
       locales: ['en'],
     },
 
-    plugins: [
+    plugins: [require.resolve('@docusaurus/plugin-ideal-image'),
       path.resolve(__dirname, 'plugins', 'addLocationChangeEvent', 'index.js'),
       path.resolve(__dirname, 'plugins', 'resizeSvg', 'index.js'),
       path.resolve(__dirname, 'plugins', 'highlightBibLinks', 'index.js'),
@@ -83,7 +83,7 @@ async function createConfig() {
         crossorigin: 'anonymous',
       },
       {
-        href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+        href: 'https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css',
       },
       {
         href: "https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css"
@@ -127,7 +127,7 @@ async function createConfig() {
           style: 'dark',
           links: [
             {
-              title: 'More Info',
+              title: 'More Information',
               items: [
                 {
                   label: 'GitHub',
