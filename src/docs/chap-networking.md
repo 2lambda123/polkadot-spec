@@ -12,7 +12,23 @@ The Polkadot network is decentralized and does not rely on any central authority
 
 This chapter walks through the behavior of the networking implementation of the Polkadot Host and defines the network messages. The implementation details of the *libp2p* protocols used are specified in external sources as described in [Section -sec-num-ref-](chap-networking#sect-networking-external-docs)
 
-## -sec-num- External Documentation {#sect-networking-external-docs}
+## External Documentation
+
+The complete specification of the Polkadot networking protocol relies on several external protocols and specifications. These include:
+
+- [libp2p](https://github.com/libp2p/specs): A modular peer-to-peer networking stack composed of many modules and different parts, including multiplexing protocols.
+
+- [libp2p addressing](https://docs.libp2p.io/concepts/addressing/): Used by the Polkadot Host for identifying and connecting to peers.
+
+- [Kademlia](https://en.wikipedia.org/wiki/Kademlia): A distributed hash table used for decentralized peer-to-peer networks, utilized for peer discovery.
+
+- [Noise](https://noiseprotocol.org/): A framework for building cryptographic protocols utilized for establishing the encryption layer to remote peers.
+
+- [yamux](https://docs.libp2p.io/concepts/stream-multiplexing/#yamux): A multiplexing protocol developed by HashiCorp, used as the de-facto standard for the Polkadot Host.
+
+- [Protocol Buffers](https://developers.google.com/protocol-buffers/docs/reference/proto3-spec): A language-neutral, platform-neutral mechanism for serializing structured data developed by Google, utilized to serialize specific messages.
+
+The Polkadot Host uses these external specifications to implement the networking protocols and substreams.
 
 Complete specification of the Polkadot networking protocol relies on the following external protocols:
 
@@ -84,7 +100,7 @@ The Polkadot Host uses various mechanisms to find peers within the network, to e
 
 - **Kademlia requests** invoking Kademlia requests, where nodes respond with their list of available peers. Kademlia requests are performed on a specific substream as described in [Section -sec-num-ref-](chap-networking#sect-protocols-substreams).
 
-## -sec-num- Connection establishment {#sect-connection-establishment}
+Check Response No Changes
 
 Polkadot nodes connect to peers by establishing a TCP connection. Once established, the node initiates a handshake with the remote peers on the encryption layer. An additional layer on top of the encryption layer, known as the multiplexing layer, allows a connection to be split into substreams, as described by the [yamux specification](https://docs.libp2p.io/concepts/stream-multiplexing/#yamux), either by the local or remote node.
 
@@ -112,7 +128,7 @@ The Polkadot Host can establish a connection with any peer of which it knows the
 
 - **DNS** addresses in form of `/dns/example.com/tcp/30333` and `/dns/example.com/tcp/30333/ws`.
 
-The addressing system is described in the [libp2p addressing](https://docs.libp2p.io/concepts/addressing/) specification. After a base-layer protocol is established, the Polkadot Host will apply the Noise protocol to establish the encryption layer as described in [Section -sec-num-ref-](chap-networking#sect-encryption-layer).
+The addressing system is described in the [libp2p addressing](https://docs.libp2p.io/concepts/addressing/) specification. After a base-layer protocol is established, the Polkadot Host will apply the Noise protocol to establish the encryption layer as described in [Check Response No Changes.
 
 ## -sec-num- Encryption Layer {#sect-encryption-layer}
 
@@ -389,7 +405,7 @@ $$
 {P}={\left({{f}_{{x}}\ldots}{{f}_{{y}},}{c}\right)}
 $$
 
-${{f}_{{x}}\ldots}{{f}_{{y}}}$ is an array consisting of warp sync fragments of the following format:
+Check Response No Changes
 
 $$
 {{f}_{{x}}=}{\left({B}_{{h}},{J}^{{{r},\text{stage}}}{\left({B}\right)}\right)}
